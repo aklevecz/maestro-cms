@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
   new _maestroMagician.MaestroMagician("SidebarContainer", _maestroMutationCallbacks.cartAndQuantityMutationCallback);
   new _maestroUser.MaestroUser(customWindow);
 });
-new _maestroUser.MaestroUser(customWindow);
 
 },{"./maestro-magician":3,"./maestro-mutation-callbacks":4,"./maestro-user":6}],3:[function(require,module,exports){
 "use strict";
@@ -341,10 +340,10 @@ class MaestroSegmentClient {
     const isProd = this._segmentFilter.canSendEvent(event, "djclub", this._extractSlug());
 
     if (isProd) {
-      console.log("is prod");
+      console.log(event, " is prod");
       return this._analytics.prod;
     } else {
-      console.log("is dev");
+      console.log(event, " is dev");
       return this._analytics.dev;
     }
   } //#endregion Private Methods
@@ -23270,4 +23269,4 @@ module.exports = function(val){
 
 },{}]},{},[2])(2)
 });
-//# sourceMappingURL=maestro_injection.4efcbf65.js.map
+//# sourceMappingURL=maestro_injection.e04ef3e2.js.map
