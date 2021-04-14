@@ -337,7 +337,11 @@ class MaestroSegmentClient {
       return null;
     }
 
-    const isProd = this._segmentFilter.canSendEvent(event, "djclub", this._extractSlug());
+    const slug = this._extractSlug();
+
+    console.log(slug);
+
+    const isProd = this._segmentFilter.canSendEvent(event, "djclub", slug);
 
     if (isProd) {
       console.log(event, " is prod");
@@ -23269,4 +23273,4 @@ module.exports = function(val){
 
 },{}]},{},[2])(2)
 });
-//# sourceMappingURL=maestro_injection.e04ef3e2.js.map
+//# sourceMappingURL=maestro_injection.258a3d19.js.map
