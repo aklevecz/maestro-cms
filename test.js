@@ -256,26 +256,26 @@ class MaestroSegmentClient {
     this._segmentFilter = new _segmentAnalyticsFilter.SegmentAnalyticsFilter();
     this._analytics.prod = this._initAnalyticsObj("prod");
     this._analytics.dev = this._initAnalyticsObj("dev");
-
-    this._init();
-
     window.addEventListener("message", this._onWindowMessage.bind(this));
   } //#endregion Constructor
   //#region Private Methods
 
 
-  async _init() {
-    const config = await this.getConfig();
+  async init() {
+    return new Promise(async resolve => {
+      const config = await this.getConfig();
 
-    if (!config) {
-      return;
-    }
+      if (!config) {
+        return;
+      }
 
-    this._segmentFilter.setConfig(config.body);
+      this._segmentFilter.setConfig(config.body);
 
-    const initialPage = this._extractPageRoute();
+      const initialPage = this._extractPageRoute();
 
-    this.trackPage(initialPage);
+      this.trackPage(initialPage);
+      resolve(true);
+    });
   }
 
   async getConfig() {
@@ -508,12 +508,14 @@ class MaestroUser {
 
     this._maestroSegmentClient = new _maestroSegmentClient.MaestroSegmentClient();
 
-    if (decodedJwt) {
-      this.attrs = decodedJwt;
-      this._authenticated = true;
+    this._maestroSegmentClient.init().then(() => {
+      if (decodedJwt) {
+        this.attrs = decodedJwt;
+        this._authenticated = true;
 
-      this._userIdentify();
-    }
+        this._userIdentify();
+      }
+    });
 
     const dObserver = new MutationObserver(this._checkForChange.bind(this));
     dObserver.observe(document.body, {
@@ -23276,4 +23278,4 @@ module.exports = function(val){
 
 },{}]},{},[2])(2)
 });
-//# sourceMappingURL=maestro_injection.4845403a.js.map
+//# sourceMappingURL=maestro_injection.40361c59.js.map
