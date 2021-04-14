@@ -515,14 +515,15 @@ class MaestroUser {
 
         this._userIdentify();
       }
+
+      const dObserver = new MutationObserver(this._checkForChange.bind(this));
+      dObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      document.body.onclick = this._checkOnClick.bind(this);
     });
 
-    const dObserver = new MutationObserver(this._checkForChange.bind(this));
-    dObserver.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-    document.body.onclick = this._checkOnClick.bind(this);
     this._boundOnConfirmEmailClick = this._onConfirmEmailClick.bind(this);
     this._boundOnSignupClick = this._onSignupClick.bind(this);
   } //#endregion Constructor
@@ -23278,4 +23279,4 @@ module.exports = function(val){
 
 },{}]},{},[2])(2)
 });
-//# sourceMappingURL=maestro_injection.40361c59.js.map
+//# sourceMappingURL=maestro_injection.75ff44f1.js.map
