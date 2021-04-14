@@ -267,7 +267,11 @@ class MaestroSegmentClient {
   async _init() {
     const config = await this.getConfig();
 
-    this._segmentFilter.setConfig(config);
+    if (!config) {
+      return;
+    }
+
+    this._segmentFilter.setConfig(config.body);
 
     const initialPage = this._extractPageRoute();
 
@@ -278,8 +282,7 @@ class MaestroSegmentClient {
     let response = null;
 
     try {
-      response = await _superagent.default.get(CONFIG_URL).set("Content-Type", "application/json").ok(res => res.status < 600);
-      return response.body;
+      return response = await _superagent.default.get(CONFIG_URL).set("Content-Type", "application/json").ok(res => res.status < 600);
     } catch (err) {
       console.log(err);
     }
@@ -23273,4 +23276,4 @@ module.exports = function(val){
 
 },{}]},{},[2])(2)
 });
-//# sourceMappingURL=maestro_injection.258a3d19.js.map
+//# sourceMappingURL=maestro_injection.4845403a.js.map
