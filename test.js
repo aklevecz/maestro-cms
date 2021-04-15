@@ -261,7 +261,6 @@ class MaestroSegmentClient {
     this._segmentFilter = new _segmentAnalyticsFilter.SegmentAnalyticsFilter();
     this._analytics.prod = this._initAnalyticsObj("prod");
     this._analytics.dev = this._initAnalyticsObj("dev");
-    this.init();
     window.addEventListener("message", this._onWindowMessage.bind(this));
   } //#endregion Constructor
   //#region Private Methods
@@ -271,9 +270,11 @@ class MaestroSegmentClient {
     const config = await this.getConfig();
 
     if (config) {
-      this._segmentFilter.setConfig(config.body); // const initialPage = this._extractPageRoute();
-      // this.trackPage(initialPage);
+      this._segmentFilter.setConfig(config.body);
 
+      const initialPage = this._extractPageRoute();
+
+      this.trackPage(initialPage);
     }
 
     return config;
