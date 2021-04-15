@@ -235,6 +235,7 @@ exports.MaestroPages = MaestroPages;
   MaestroPages["SIGNUP"] = "Account Sign Up Modal";
   MaestroPages["TICKET_PAGE"] = "Ticket Page";
   MaestroPages["PROFILE"] = "Profile";
+  MaestroPages["IDENTIFY"] = "Identify";
 })(MaestroPages || (exports.MaestroPages = MaestroPages = {}));
 
 const CONFIG_URL = "https://d3237kjlqd8q2g.cloudfront.net/analytics-filter-config/analytics-filter-config.json";
@@ -262,20 +263,20 @@ class MaestroSegmentClient {
 
 
   async init() {
-    return new Promise(async resolve => {
-      const config = await this.getConfig();
+    // return new Promise(async (resolve) => {
+    const config = await this.getConfig();
 
-      if (!config) {
-        return;
-      }
+    if (!config) {
+      return false;
+    }
 
-      this._segmentFilter.setConfig(config.body);
+    this._segmentFilter.setConfig(config.body);
 
-      const initialPage = this._extractPageRoute();
+    const initialPage = this._extractPageRoute();
 
-      this.trackPage(initialPage);
-      resolve(true);
-    });
+    this.trackPage(initialPage); // resolve(true);
+
+    return config; // });
   }
 
   async getConfig() {
@@ -287,7 +288,7 @@ class MaestroSegmentClient {
       console.log(err);
     }
 
-    return null;
+    return response;
   }
 
   _initAnalyticsObj(env) {
@@ -342,15 +343,11 @@ class MaestroSegmentClient {
 
     const slug = this._extractSlug();
 
-    console.log(slug);
-
     const isProd = this._segmentFilter.canSendEvent(event, "djclub", slug);
 
     if (isProd) {
-      console.log(event, " is prod");
       return this._analytics.prod;
     } else {
-      console.log(event, " is dev");
       return this._analytics.dev;
     }
   } //#endregion Private Methods
@@ -383,7 +380,7 @@ class MaestroSegmentClient {
   }
 
   trackIdentify(id, createdAt, email, emailOptIn = false, modifiedAt, username) {
-    const analytics = this._whichAnalytics("Identify");
+    const analytics = this._whichAnalytics(MaestroSegmentClient.IDENTIFY);
 
     analytics && analytics.identify(id, {
       createdAt: new Date(createdAt),
@@ -418,6 +415,8 @@ _defineProperty(MaestroSegmentClient, "LOGIN_EVENT_NAME", "Account Logged In");
 _defineProperty(MaestroSegmentClient, "ACCOUNT_CREATED_EVENT_NAME", "Account Created");
 
 _defineProperty(MaestroSegmentClient, "OVERLAY_INTERACTED_NAME", "Overlay Interacted");
+
+_defineProperty(MaestroSegmentClient, "IDENTIFY", "Identify");
 
 _defineProperty(MaestroSegmentClient, "OVERLAY_EVENT", "wave_watcher_interaction_analytics_event");
 
@@ -23279,4 +23278,4 @@ module.exports = function(val){
 
 },{}]},{},[2])(2)
 });
-//# sourceMappingURL=maestro_injection.75ff44f1.js.map
+//# sourceMappingURL=maestro_injection.js.map
