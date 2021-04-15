@@ -70,15 +70,19 @@ var _maestroUser = require("./maestro-user");
 
 var _maestroMutationCallbacks = require("./maestro-mutation-callbacks");
 
+var _maestroSegmentClient = require("./maestro-segment-client");
+
 const customWindow = window;
 console.log("Magic will happen");
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   console.log("Making things disappear...");
   new _maestroMagician.MaestroMagician("SidebarContainer", _maestroMutationCallbacks.cartAndQuantityMutationCallback);
-  new _maestroUser.MaestroUser(customWindow);
+  const maestroSegmentClient = new _maestroSegmentClient.MaestroSegmentClient();
+  await maestroSegmentClient.init();
+  new _maestroUser.MaestroUser(customWindow, maestroSegmentClient);
 });
 
-},{"./maestro-magician":3,"./maestro-mutation-callbacks":4,"./maestro-user":6}],3:[function(require,module,exports){
+},{"./maestro-magician":3,"./maestro-mutation-callbacks":4,"./maestro-segment-client":5,"./maestro-user":6}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -257,6 +261,7 @@ class MaestroSegmentClient {
     this._segmentFilter = new _segmentAnalyticsFilter.SegmentAnalyticsFilter();
     this._analytics.prod = this._initAnalyticsObj("prod");
     this._analytics.dev = this._initAnalyticsObj("dev");
+    this.init();
     window.addEventListener("message", this._onWindowMessage.bind(this));
   } //#endregion Constructor
   //#region Private Methods
@@ -342,6 +347,8 @@ class MaestroSegmentClient {
 
     const isProd = this._segmentFilter.canSendEvent(event, "", slug);
 
+    console.log(event, isProd);
+
     if (isProd) {
       return this._analytics.prod;
     } else {
@@ -354,7 +361,7 @@ class MaestroSegmentClient {
   trackPage(page) {
     const analytics = this._whichAnalytics(MaestroSegmentClient.PAGE_EVENT_NAME);
 
-    analytics && analytics.page(MaestroSegmentClient.PAGE_EVENT_NAME, page);
+    analytics && analytics.page(page);
   }
 
   trackUserLogin(email, username) {
@@ -477,7 +484,7 @@ class MaestroUser {
   //#region Private Variables
   //#endregion Private Variables
   //#region Constructor
-  constructor(window) {
+  constructor(window, maestroClient) {
     _defineProperty(this, "attrs", null);
 
     _defineProperty(this, "_authenticated", false);
@@ -504,23 +511,21 @@ class MaestroUser {
 
     const decodedJwt = this._getTokenFromStorage();
 
-    this._maestroSegmentClient = new _maestroSegmentClient.MaestroSegmentClient();
+    this._maestroSegmentClient = maestroClient; // this._maestroSegmentClient.init().then(() => {
 
-    this._maestroSegmentClient.init().then(() => {
-      if (decodedJwt) {
-        this.attrs = decodedJwt;
-        this._authenticated = true;
+    if (decodedJwt) {
+      this.attrs = decodedJwt;
+      this._authenticated = true;
 
-        this._userIdentify();
-      }
+      this._userIdentify();
+    }
 
-      const dObserver = new MutationObserver(this._checkForChange.bind(this));
-      dObserver.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-      document.body.onclick = this._checkOnClick.bind(this);
+    const dObserver = new MutationObserver(this._checkForChange.bind(this));
+    dObserver.observe(document.body, {
+      childList: true,
+      subtree: true
     });
+    document.body.onclick = this._checkOnClick.bind(this); // });
 
     this._boundOnConfirmEmailClick = this._onConfirmEmailClick.bind(this);
     this._boundOnSignupClick = this._onSignupClick.bind(this);
