@@ -263,24 +263,22 @@ class MaestroSegmentClient {
 
 
   async init() {
-    // return new Promise(async (resolve) => {
     const config = await this.getConfig();
 
-    if (!config) {
-      return false;
+    if (config) {
+      this._segmentFilter.setConfig(config.body);
+
+      const initialPage = this._extractPageRoute();
+
+      this.trackPage(initialPage);
     }
 
-    this._segmentFilter.setConfig(config.body);
-
-    const initialPage = this._extractPageRoute();
-
-    this.trackPage(initialPage); // resolve(true);
-
-    return config; // });
+    return config;
   }
 
   async getConfig() {
     let response = null;
+    return null;
 
     try {
       return response = await _superagent.default.get(CONFIG_URL).set("Content-Type", "application/json").ok(res => res.status < 600);
@@ -344,8 +342,6 @@ class MaestroSegmentClient {
     const slug = this._extractSlug();
 
     const isProd = this._segmentFilter.canSendEvent(event, "", slug);
-
-    console.log(event, isProd);
 
     if (isProd) {
       return this._analytics.prod;
@@ -509,7 +505,10 @@ class MaestroUser {
 
     this._maestroSegmentClient = new _maestroSegmentClient.MaestroSegmentClient();
 
-    this._maestroSegmentClient.init().then(() => {
+    this._maestroSegmentClient.init().then(r => {
+      console.log(r);
+      console.log("still inits?");
+
       if (decodedJwt) {
         this.attrs = decodedJwt;
         this._authenticated = true;
