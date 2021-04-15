@@ -271,11 +271,9 @@ class MaestroSegmentClient {
     const config = await this.getConfig();
 
     if (config) {
-      this._segmentFilter.setConfig(config.body);
+      this._segmentFilter.setConfig(config.body); // const initialPage = this._extractPageRoute();
+      // this.trackPage(initialPage);
 
-      const initialPage = this._extractPageRoute();
-
-      this.trackPage(initialPage);
     }
 
     return config;
