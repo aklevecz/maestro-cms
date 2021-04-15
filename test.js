@@ -278,7 +278,6 @@ class MaestroSegmentClient {
 
   async getConfig() {
     let response = null;
-    return null;
 
     try {
       return response = await _superagent.default.get(CONFIG_URL).set("Content-Type", "application/json").ok(res => res.status < 600);
@@ -353,9 +352,9 @@ class MaestroSegmentClient {
 
 
   trackPage(page) {
-    const analytics = this._whichAnalytics(page);
+    const analytics = this._whichAnalytics(MaestroSegmentClient.PAGE_EVENT_NAME);
 
-    analytics && analytics.page(page);
+    analytics && analytics.page(MaestroSegmentClient.PAGE_EVENT_NAME, page);
   }
 
   trackUserLogin(email, username) {
@@ -415,6 +414,8 @@ _defineProperty(MaestroSegmentClient, "ACCOUNT_CREATED_EVENT_NAME", "Account Cre
 _defineProperty(MaestroSegmentClient, "OVERLAY_INTERACTED_NAME", "Overlay Interacted");
 
 _defineProperty(MaestroSegmentClient, "IDENTIFY", "Identify");
+
+_defineProperty(MaestroSegmentClient, "PAGE_EVENT_NAME", "Page");
 
 _defineProperty(MaestroSegmentClient, "OVERLAY_EVENT", "wave_watcher_interaction_analytics_event");
 
@@ -505,10 +506,7 @@ class MaestroUser {
 
     this._maestroSegmentClient = new _maestroSegmentClient.MaestroSegmentClient();
 
-    this._maestroSegmentClient.init().then(r => {
-      console.log(r);
-      console.log("still inits?");
-
+    this._maestroSegmentClient.init().then(() => {
       if (decodedJwt) {
         this.attrs = decodedJwt;
         this._authenticated = true;
