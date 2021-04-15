@@ -343,7 +343,9 @@ class MaestroSegmentClient {
 
     const slug = this._extractSlug();
 
-    const isProd = this._segmentFilter.canSendEvent(event, "djclub", slug);
+    const isProd = this._segmentFilter.canSendEvent(event, "", slug);
+
+    console.log(event, isProd);
 
     if (isProd) {
       return this._analytics.prod;
