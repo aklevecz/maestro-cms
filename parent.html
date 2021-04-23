@@ -1,1 +1,28 @@
-<iframe src="https://aklevecz.github.io/maestro-cms/testframe.html"></iframe>
+<iframe
+    style="position: absolute; bottom: 0; left: 0; height: 50px; width: 50px"
+    src="./testframe.html"
+></iframe>
+<script>
+    if (window.addEventListener) {
+        window.addEventListener("message", onMessage, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onmessage", onMessage, false);
+    }
+
+    function onMessage(event) {
+        // Check sender origin to be trusted
+        console.log(event)
+        // if (event.origin !== "http://example.com") return;
+
+        var data = event.data;
+        console.log(typeof window[data.func])
+        if (typeof window[data.func] == "function") {
+            window[data.func].call(null, data.message);
+        }
+    }
+
+    // Function to be called from iframe
+    function parentFunc(message) {
+        alert(message);
+    }
+</script>
