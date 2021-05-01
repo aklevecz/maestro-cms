@@ -1,23 +1,21 @@
 {
   "files": {
-    "main.css": "/maestro-cms/landing/static/css/main.797d4b01.chunk.css",
-    "main.js": "/maestro-cms/landing/static/js/main.c2fefcbd.chunk.js",
-    "main.js.map": "/maestro-cms/landing/static/js/main.c2fefcbd.chunk.js.map",
-    "runtime-main.js": "/maestro-cms/landing/static/js/runtime-main.a1cccf31.js",
-    "runtime-main.js.map": "/maestro-cms/landing/static/js/runtime-main.a1cccf31.js.map",
-    "static/js/2.1cb6af07.chunk.js": "/maestro-cms/landing/static/js/2.1cb6af07.chunk.js",
-    "static/js/2.1cb6af07.chunk.js.map": "/maestro-cms/landing/static/js/2.1cb6af07.chunk.js.map",
-    "index.html": "/maestro-cms/landing/index.html",
-    "static/css/main.797d4b01.chunk.css.map": "/maestro-cms/landing/static/css/main.797d4b01.chunk.css.map",
-    "static/js/2.1cb6af07.chunk.js.LICENSE.txt": "/maestro-cms/landing/static/js/2.1cb6af07.chunk.js.LICENSE.txt",
-    "static/media/blue_logo.1c7dbab9.png": "/maestro-cms/landing/static/media/blue_logo.1c7dbab9.png",
-    "static/media/App.css": "/maestro-cms/landing/static/media/itc-avant-garde-std-bold.f501defc.otf",
-    "static/media/white_logo.f3a8bb00.png": "/maestro-cms/landing/static/media/white_logo.f3a8bb00.png"
+    "main.css": "/static/css/main.363e4167.chunk.css",
+    "main.js": "/static/js/main.ff3511ae.chunk.js",
+    "runtime-main.js": "/static/js/runtime-main.5e34ccc7.js",
+    "static/js/2.ee29a335.chunk.js": "/static/js/2.ee29a335.chunk.js",
+    "index.html": "/index.html",
+    "static/js/2.ee29a335.chunk.js.LICENSE.txt": "/static/js/2.ee29a335.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Coanda-Black.c21ed753.otf",
+    "static/media/bp_bg.68af6dec.png": "/static/media/bp_bg.68af6dec.png",
+    "static/media/footer_photo.077e72c7.png": "/static/media/footer_photo.077e72c7.png",
+    "static/media/footer_photo_mobile.d15e39da.png": "/static/media/footer_photo_mobile.d15e39da.png",
+    "static/media/white_logo.f3a8bb00.png": "/static/media/white_logo.f3a8bb00.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a1cccf31.js",
-    "static/js/2.1cb6af07.chunk.js",
-    "static/css/main.797d4b01.chunk.css",
-    "static/js/main.c2fefcbd.chunk.js"
+    "static/js/runtime-main.5e34ccc7.js",
+    "static/js/2.ee29a335.chunk.js",
+    "static/css/main.363e4167.chunk.css",
+    "static/js/main.ff3511ae.chunk.js"
   ]
 }
