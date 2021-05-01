@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/maestor-cms/landing/static/css/main.5909fe13.chunk.css",
-    "main.js": "/maestor-cms/landing/static/js/main.ff3511ae.chunk.js",
-    "runtime-main.js": "/maestor-cms/landing/static/js/runtime-main.ada6fa45.js",
-    "static/js/2.ee29a335.chunk.js": "/maestor-cms/landing/static/js/2.ee29a335.chunk.js",
-    "index.html": "/maestor-cms/landing/index.html",
-    "static/js/2.ee29a335.chunk.js.LICENSE.txt": "/maestor-cms/landing/static/js/2.ee29a335.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/maestor-cms/landing/static/media/Coanda-Black.c21ed753.otf",
-    "static/media/bp_bg.68af6dec.png": "/maestor-cms/landing/static/media/bp_bg.68af6dec.png",
-    "static/media/footer_photo.077e72c7.png": "/maestor-cms/landing/static/media/footer_photo.077e72c7.png",
-    "static/media/footer_photo_mobile.d15e39da.png": "/maestor-cms/landing/static/media/footer_photo_mobile.d15e39da.png",
-    "static/media/white_logo.f3a8bb00.png": "/maestor-cms/landing/static/media/white_logo.f3a8bb00.png"
+    "main.css": "/maestro-cms/landing/static/css/main.a395328a.chunk.css",
+    "main.js": "/maestro-cms/landing/static/js/main.ff3511ae.chunk.js",
+    "runtime-main.js": "/maestro-cms/landing/static/js/runtime-main.a1cccf31.js",
+    "static/js/2.ee29a335.chunk.js": "/maestro-cms/landing/static/js/2.ee29a335.chunk.js",
+    "index.html": "/maestro-cms/landing/index.html",
+    "static/js/2.ee29a335.chunk.js.LICENSE.txt": "/maestro-cms/landing/static/js/2.ee29a335.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/maestro-cms/landing/static/media/Coanda-Black.c21ed753.otf",
+    "static/media/bp_bg.68af6dec.png": "/maestro-cms/landing/static/media/bp_bg.68af6dec.png",
+    "static/media/footer_photo.077e72c7.png": "/maestro-cms/landing/static/media/footer_photo.077e72c7.png",
+    "static/media/footer_photo_mobile.d15e39da.png": "/maestro-cms/landing/static/media/footer_photo_mobile.d15e39da.png",
+    "static/media/white_logo.f3a8bb00.png": "/maestro-cms/landing/static/media/white_logo.f3a8bb00.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ada6fa45.js",
+    "static/js/runtime-main.a1cccf31.js",
     "static/js/2.ee29a335.chunk.js",
-    "static/css/main.5909fe13.chunk.css",
+    "static/css/main.a395328a.chunk.css",
     "static/js/main.ff3511ae.chunk.js"
   ]
 }
