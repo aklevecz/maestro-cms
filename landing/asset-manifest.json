@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/maestro-cms/landing/static/css/main.a395328a.chunk.css",
-    "main.js": "/maestro-cms/landing/static/js/main.ff3511ae.chunk.js",
+    "main.js": "/maestro-cms/landing/static/js/main.568461a1.chunk.js",
     "runtime-main.js": "/maestro-cms/landing/static/js/runtime-main.a1cccf31.js",
     "static/js/2.ee29a335.chunk.js": "/maestro-cms/landing/static/js/2.ee29a335.chunk.js",
     "index.html": "/maestro-cms/landing/index.html",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.a1cccf31.js",
     "static/js/2.ee29a335.chunk.js",
     "static/css/main.a395328a.chunk.css",
-    "static/js/main.ff3511ae.chunk.js"
+    "static/js/main.568461a1.chunk.js"
   ]
 }
