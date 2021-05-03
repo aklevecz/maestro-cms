@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/maestro-cms/landing/static/css/main.397d7278.chunk.css",
-    "main.js": "/maestro-cms/landing/static/js/main.fdf3619c.chunk.js",
+    "main.css": "/maestro-cms/landing/static/css/main.215f3341.chunk.css",
+    "main.js": "/maestro-cms/landing/static/js/main.b99c17f8.chunk.js",
     "runtime-main.js": "/maestro-cms/landing/static/js/runtime-main.a1cccf31.js",
-    "static/js/2.ee29a335.chunk.js": "/maestro-cms/landing/static/js/2.ee29a335.chunk.js",
+    "static/js/2.dbaab1dd.chunk.js": "/maestro-cms/landing/static/js/2.dbaab1dd.chunk.js",
     "index.html": "/maestro-cms/landing/index.html",
-    "static/js/2.ee29a335.chunk.js.LICENSE.txt": "/maestro-cms/landing/static/js/2.ee29a335.chunk.js.LICENSE.txt",
+    "static/js/2.dbaab1dd.chunk.js.LICENSE.txt": "/maestro-cms/landing/static/js/2.dbaab1dd.chunk.js.LICENSE.txt",
     "static/media/index.css": "/maestro-cms/landing/static/media/Coanda-Black.c21ed753.otf",
-    "static/media/bp_bg.68af6dec.png": "/maestro-cms/landing/static/media/bp_bg.68af6dec.png",
+    "static/media/bg_desk.ae612b79.png": "/maestro-cms/landing/static/media/bg_desk.ae612b79.png",
+    "static/media/bg_mobile.8bc5d482.png": "/maestro-cms/landing/static/media/bg_mobile.8bc5d482.png",
     "static/media/footer_photo.077e72c7.png": "/maestro-cms/landing/static/media/footer_photo.077e72c7.png",
     "static/media/footer_photo_mobile.d15e39da.png": "/maestro-cms/landing/static/media/footer_photo_mobile.d15e39da.png",
     "static/media/white_logo.f3a8bb00.png": "/maestro-cms/landing/static/media/white_logo.f3a8bb00.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a1cccf31.js",
-    "static/js/2.ee29a335.chunk.js",
-    "static/css/main.397d7278.chunk.css",
-    "static/js/main.fdf3619c.chunk.js"
+    "static/js/2.dbaab1dd.chunk.js",
+    "static/css/main.215f3341.chunk.css",
+    "static/js/main.b99c17f8.chunk.js"
   ]
 }
