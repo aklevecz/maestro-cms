@@ -1,12 +1,11 @@
 {
   "files": {
-    "main.css": "/maestro-cms/landing/static/css/main.a77a11b0.chunk.css",
-    "main.js": "/maestro-cms/landing/static/js/main.1b789729.chunk.js",
+    "main.css": "/maestro-cms/landing/static/css/main.91a93e80.chunk.css",
+    "main.js": "/maestro-cms/landing/static/js/main.2e972e4b.chunk.js",
     "runtime-main.js": "/maestro-cms/landing/static/js/runtime-main.a1cccf31.js",
     "static/js/2.dbaab1dd.chunk.js": "/maestro-cms/landing/static/js/2.dbaab1dd.chunk.js",
     "index.html": "/maestro-cms/landing/index.html",
     "static/js/2.dbaab1dd.chunk.js.LICENSE.txt": "/maestro-cms/landing/static/js/2.dbaab1dd.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/maestro-cms/landing/static/media/Coanda-Black.c21ed753.otf",
     "static/media/bg_desk.ae612b79.png": "/maestro-cms/landing/static/media/bg_desk.ae612b79.png",
     "static/media/bg_mobile.8bc5d482.png": "/maestro-cms/landing/static/media/bg_mobile.8bc5d482.png",
     "static/media/footer_photo.077e72c7.png": "/maestro-cms/landing/static/media/footer_photo.077e72c7.png",
@@ -16,7 +15,7 @@
   "entrypoints": [
     "static/js/runtime-main.a1cccf31.js",
     "static/js/2.dbaab1dd.chunk.js",
-    "static/css/main.a77a11b0.chunk.css",
-    "static/js/main.1b789729.chunk.js"
+    "static/css/main.91a93e80.chunk.css",
+    "static/js/main.2e972e4b.chunk.js"
   ]
 }
