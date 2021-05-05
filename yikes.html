@@ -1,0 +1,17 @@
+<script>
+var div = document.createElement("div");
+div.id = "root";
+div.style = `position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100%;
+    z-index: 999;`
+document.body.appendChild(div);
+</script>
+<script src="https://aklevecz.github.io/maestro-cms/landing/all.js"></script>
+<script>
+var newsb = document.querySelector(".btn-signup")
+var oldsb = document.querySelector(".LoginGate__LoginButton-sc-1qsuapt-2");
+newsb.onclick = () => oldsb.click()
+</script>
